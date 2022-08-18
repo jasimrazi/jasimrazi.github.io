@@ -2356,8 +2356,7 @@ input[type="radio"]:focus+label:before {
 	text-rendering: auto;
 	line-height: 1;
 	text-transform: none !important;
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 400;
+
 }
 
 .icon>.label {
@@ -2372,16 +2371,11 @@ input[type="radio"]:focus+label:before {
 	font-weight: 900;
 }
 
-.icon.brands:before {
-	font-family: 'Font Awesome 5 Brands';
-}
+.icon.brands:before {}
 
 .icon.major {
-	border: solid 1px;
+	font-size: 10rem;
 	display: inline-block;
-	border-radius: 100%;
-	padding: 0.65em;
-	margin: 0 0 2em 0;
 	cursor: default;
 }
 
@@ -2391,8 +2385,6 @@ input[type="radio"]:focus+label:before {
 	width: 2.25em;
 	height: 2.25em;
 	line-height: 2.2em;
-	border-radius: 100%;
-	border: solid 1px;
 	text-align: center;
 }
 
@@ -2412,7 +2404,9 @@ input[type="radio"]:focus+label:before {
 }
 
 .icon.style1 {
-	color: #efa8b0;
+	background: -webkit-linear-gradient(#01f160, #00c14c);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .icon.style2 {
@@ -3134,8 +3128,6 @@ table.alt tbody tr td {
 	display: inline-block;
 	margin-left: 4em;
 	padding: 0.65em;
-	border-radius: 100%;
-	border: solid 1px;
 }
 
 .spotlight .image img {
@@ -3198,9 +3190,7 @@ table.alt tbody tr td {
 
 }
 
-.spotlight .image {
-	border-color: rgba(255, 255, 255, 0.35);
-}
+.spotlight .image {}
 
 /* Header */
 
@@ -3437,19 +3427,26 @@ body.is-preload #header.alt .logo {
 	height: 2.25em;
 	line-height: 2.25em;
 	padding: 0 1.25em;
-	border: 0;
 	border-radius: 30em;
 	box-shadow: inset 0 0 0 1px transparent;
 	transition: background-color 0.5s;
 	font-weight: 600;
+	border-color: rgba(255, 127, 80, 0);
+	border-style: solid;
+	border-width: 2px;
 }
 
 #nav ul li a:hover {
-	background-color: #b4fcce;
+	border-color: #1ED760;
+	border-style: solid;
+	border-width: 2px;
 	color: #232925;
 }
 
 #nav ul li a.active {
+	border-color: #1ED760;
+	border-style: solid;
+	border-width: 2px;
 	background-color: #1ed760;
 	color: rgb(0, 0, 0);
 	box-shadow: none;
@@ -3510,7 +3507,6 @@ body.is-preload #header.alt .logo {
 
 #main h1,
 #main h2,
-#main h3,
 #main h4,
 #main h5,
 #main h6 {
@@ -3526,6 +3522,7 @@ body.is-preload #header.alt .logo {
 }
 
 #main h3 {
+	color: #212121;
 	font-weight: 600;
 }
 
