@@ -1,0 +1,144 @@
+body {
+  font-family: "Montserrat";
+  font-style: normal;
+  color: black;
+  margin: auto;
+  padding-left: 8.5em;
+  padding-right: 8.5em;
+}
+
+h1 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 96px;
+  line-height: 117px;
+  text-align: center;
+  color: #000000;
+}
+
+h2 {
+  color: #1ed760;
+  text-decoration: underline;
+  font-size: 32px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.skilltitle {
+  color: #000000;
+  text-decoration: underline;
+  font-size: 28px;
+}
+.navHead {
+  text-align: center;
+}
+
+#rocket {
+  background: #f1f1f1;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: center;
+}
+
+.navBG {
+  border: 2px solid #f1f1f1;
+  border-radius: 40px;
+  background-color: #f1f1f1;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.navHead {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.navMenu a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 2.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 40px;
+  border: 2px solid #00000000;
+  transition: 0.3s;
+}
+
+.navMenu a:hover {
+  color: #000000;
+  border: 2px solid #1ed760;
+}
+
+.navMenu a:active {
+  background-color: #1ed760;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.cards h2 {
+  text-align: center;
+  font-size: 28px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.card {
+  max-width: 355px;
+  margin: 2em;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  border-radius: 2em;
+  box-shadow: 0px 16px 22px -6px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  transition: transform 250ms;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+}
+.card i {
+  font-size: 8em;
+  color: #1ed760;
+  margin: 1rem;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#00f260),
+    to(#00c04c)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.qcards {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.qcard {
+  max-width: 450px;
+  padding-right: 2em;
+  padding-left: 2em;
+}
