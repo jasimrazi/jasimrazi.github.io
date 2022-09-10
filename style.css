@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat";
   font-style: normal;
@@ -5,6 +9,8 @@ body {
   margin: auto;
   padding-left: 8.5em;
   padding-right: 8.5em;
+  padding-top: 8.5em;
+  padding-bottom: 8.5em;
 }
 
 h1 {
@@ -12,7 +18,6 @@ h1 {
   font-style: normal;
   font-weight: 800;
   font-size: 96px;
-  line-height: 117px;
   text-align: center;
   color: #000000;
 }
@@ -28,9 +33,15 @@ p {
   font-weight: 500;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .skilltitle {
   color: #000000;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 28px;
 }
 .navHead {
@@ -42,6 +53,9 @@ p {
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navMenu {
@@ -76,7 +90,7 @@ p {
   padding-right: 1em;
   border-radius: 40px;
   border: 2px solid #00000000;
-  transition: 0.3s;
+  transition: all 0.4s ease;
 }
 
 .navMenu a:hover {
@@ -87,6 +101,7 @@ p {
 .navMenu a:active {
   background-color: #1ed760;
 }
+
 .cards {
   display: flex;
   justify-content: center;
@@ -141,4 +156,60 @@ p {
   max-width: 450px;
   padding-right: 2em;
   padding-left: 2em;
+}
+
+form {
+  max-width: 746px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.feedback-input {
+  color: #2c2c2c;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 30px;
+  line-height: 22px;
+  background-color: transparent;
+  border: 2px solid #1ed760;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+  padding-left: 1em;
+}
+
+.feedback-input:focus {
+  border: 2px solid #00c04c;
+}
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+[type="submit"] {
+  font-family: "Montserrat";
+  width: 100%;
+  background: #00f260;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+  color: black;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 500;
+  max-width: 222px;
+  font-size: 20px;
+}
+[type="submit"]:hover {
+  background: #1ed760;
 }
