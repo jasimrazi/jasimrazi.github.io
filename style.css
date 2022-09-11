@@ -10,7 +10,11 @@ body {
   padding-left: 8.5em;
   padding-right: 8.5em;
   padding-top: 8.5em;
-  padding-bottom: 8.5em;
+  padding-bottom: 0px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 h1 {
@@ -31,6 +35,27 @@ h2 {
 p {
   font-size: 20px;
   font-weight: 500;
+}
+
+.introcontent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.introcontent p {
+  display: flex;
+  align-items: center;
+  width: 400px;
+}
+.profile img {
+  width: 300px;
+  border-radius: 100%;
+  -moz-box-shadow: 0px 6px 5px #ccc;
+  -webkit-box-shadow: 0px 6px 5px #ccc;
+  box-shadow: 0px 6px 5px #ccc;
+  -moz-border-radius: 190px;
+  -webkit-border-radius: 190px;
 }
 
 .header {
@@ -61,10 +86,12 @@ p {
 .navMenu {
   display: flex;
   justify-content: center;
+  position: sticky;
+  top: 1em;
+  z-index: 3;
 }
 
 .navBG {
-  border: 2px solid #f1f1f1;
   border-radius: 40px;
   background-color: #f1f1f1;
   padding-top: 1.5em;
@@ -98,7 +125,11 @@ p {
   border: 2px solid #1ed760;
 }
 
-.navMenu a:active {
+/* .navMenu a:active {
+  background-color: #1ed760;
+} */
+
+.active {
   background-color: #1ed760;
 }
 
@@ -116,7 +147,7 @@ p {
 }
 
 .card {
-  max-width: 355px;
+  width: 355px;
   margin: 2em;
   padding-right: 2em;
   padding-left: 2em;
@@ -129,7 +160,7 @@ p {
 }
 
 .card:hover {
-  transform: translateY(-20px);
+  transform: translateY(-15px);
 }
 .card i {
   font-size: 8em;
@@ -195,21 +226,62 @@ textarea {
 
 [type="submit"] {
   font-family: "Montserrat";
-  width: 100%;
+
   background: #00f260;
   border-radius: 30px;
   border: 0;
   cursor: pointer;
   color: black;
   font-size: 24px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
   transition: all 0.3s;
   margin-top: -4px;
-  font-weight: 500;
+  font-weight: 600;
   max-width: 222px;
   font-size: 20px;
 }
 [type="submit"]:hover {
   background: #1ed760;
+}
+
+.rectangle {
+  background-color: #1ed760;
+  margin: 2px;
+  width: auto;
+  height: 182px;
+  padding-top: 1em;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.icons a {
+  color: white;
+}
+.icons a:visited {
+  color: white;
+}
+#instagram {
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+}
+
+#footertag {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  padding-top: 1em;
+}
+
+hr.solid {
+  border-top: 1px solid #d9d9d9;
+  margin-top: 5rem;
+  width: 1140px;
 }
