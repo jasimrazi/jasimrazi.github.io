@@ -155,7 +155,7 @@ p {
 }
 
 .card {
-  width: 355px;
+  max-width: 355px;
   margin: 2em;
   padding-right: 2em;
   padding-left: 2em;
@@ -299,7 +299,7 @@ hr.solid {
 
 
   h1{
-    font-size: 450%;
+    font-size: 400%;
   }
 
   .introcontent {
@@ -321,6 +321,11 @@ hr.solid {
   .cards {
     align-items: center;
     flex-direction: column;
+  }
+
+  .card {
+    margin: 1em 0 1em 0;
+    
   }
 
   .qcards {
