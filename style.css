@@ -335,4 +335,10 @@ hr.solid {
   .navMenu{
     display: none;
   }
+
+  .qcard {
+    
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
