@@ -43,11 +43,10 @@ window.addEventListener("scroll", () => {
 });
 
 let darkToggle = document.querySelector("#darkToggle");
-let icon = document.querySelector("#dark-icon")
+let icon = document.querySelector("#dark-icon");
 
-
-darkToggle.addEventListener('click', function() {
-  icon.classList.toggle('fa-sun');
-  icon.classList.toggle('fa-moon');
+darkToggle.addEventListener("click", function () {
+  icon.classList.toggle("fa-sun");
+  icon.classList.toggle("fa-moon");
   document.body.classList.toggle("dark");
 });
