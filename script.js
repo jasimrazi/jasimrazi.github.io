@@ -58,7 +58,7 @@ $("#submit-form").submit((e) => {
     data: $("#submit-form").serialize(),
     method: "post",
     success: function (response) {
-      alert("Form submitted successfully");
+      alert("Message Sent");
       window.location.reload();
       //window.location.href="https://google.com"
     },
