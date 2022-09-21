@@ -50,3 +50,20 @@ darkToggle.addEventListener("click", function () {
   icon.classList.toggle("fa-moon");
   document.body.classList.toggle("dark");
 });
+
+$("#submit-form").submit((e) => {
+  e.preventDefault();
+  $.ajax({
+    url: "https://script.google.com/macros/s/AKfycbzpT6Naf24uX_WAveGLWJwxgWc36ipyKYdQGVnx92HdRUrlPSAOy8lVWsqLwzvwdK6l/exec",
+    data: $("#submit-form").serialize(),
+    method: "post",
+    success: function (response) {
+      alert("Form submitted successfully");
+      window.location.reload();
+      //window.location.href="https://google.com"
+    },
+    error: function (err) {
+      alert("Something Error");
+    },
+  });
+});

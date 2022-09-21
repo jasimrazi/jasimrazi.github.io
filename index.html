@@ -17,6 +17,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
     <link rel="icon" type="image/x-icon" href="/images/FavIcon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <section class="header">
@@ -115,22 +116,25 @@
       <section class="contact" id="contact">
         <div class="divider"><hr class="solid" /></div>
         <h2 class="navHead">CONTACT</h2>
-        <form>
+        <form id="submit-form" action="">
           <div class="contactform">
             <input
               name="name"
+              id="name"
               type="text"
               class="feedback-input"
               placeholder="Name"
             />
             <input
               name="email"
+              id="email"
               type="text"
               class="feedback-input"
               placeholder="Email"
             />
             <textarea
-              name="text"
+              name="message"
+              id="message"
               class="feedback-input"
               placeholder="Message"
             ></textarea>
