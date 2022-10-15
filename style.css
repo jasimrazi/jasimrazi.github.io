@@ -75,6 +75,7 @@ p {
   text-decoration: none;
   font-size: 28px;
 }
+
 .navHead {
   text-align: center;
 }
@@ -157,13 +158,16 @@ p {
   padding-top: 5em;
   padding-bottom: 5em;
   border-radius: 2em;
-  box-shadow: 0px 16px 22px -6px rgba(0, 0, 0, 0.25);
-  border-radius: 40px;
-  transition: transform 250ms;
+  transition-property: box-shadow, transform;
+  transition-duration: 350ms;
+  transition-timing-function: ease;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
 }
 
-.card:hover {
-  transform: translateY(-15px);
+
+.card:is(:hover, :focus){
+  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
+  transform: translateY(-12px);
 }
 .card i {
   font-size: 8em;
@@ -369,7 +373,7 @@ body.dark {
 }
 
 .dark .navBG {
-  border: 2px solid #00f260;
+  border: 1.5px solid #00f260;
   background: #122333;
 }
 
@@ -380,12 +384,10 @@ body.dark {
 .dark #rocket {
   background: #172d42;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
+}
+
+.dark .feedback-input {
+  color:#f1f1f1;
 }
 
 hr.solid {
