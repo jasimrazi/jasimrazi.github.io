@@ -164,8 +164,7 @@ p {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
 }
 
-
-.card:is(:hover, :focus){
+.card:is(:hover, :focus) {
   box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
   transform: translateY(-12px);
 }
@@ -387,13 +386,27 @@ body.dark {
 }
 
 .dark .feedback-input {
-  color:#f1f1f1;
+  color: #f1f1f1;
 }
 
 hr.solid {
   border-top: 0.5px solid #d9d9d9;
   margin-top: 5rem;
   width: 65%;
+}
+/* Add this CSS to your existing stylesheet */
+
+#rocket {
+  cursor: pointer;
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+.fade-out {
+  opacity: 0; /* Fade out effect */
+}
+
+.fade-in {
+  opacity: 1; /* Fade in effect */
 }
 
 @media only screen and (max-width: 600px) {
@@ -462,5 +475,45 @@ hr.solid {
 
   hr.solid {
     width: 90%;
+  }
+
+  .timeline {
+    position: relative;
+    margin: 2em 0;
+    padding-left: 30px; /* Space for the timeline dots */
+  }
+
+  .timeline-item {
+    margin-bottom: 2em;
+    position: relative; /* Position relative for the dot */
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -8px; /* Adjusts position of the dot to the left */
+    width: 12px;
+    height: 12px;
+    background-color: #1ed760; /* Color of the dot */
+    border-radius: 50%; /* Makes it a circle */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    z-index: 1; /* Ensures the dot is on top */
+  }
+
+  .timeline-content {
+    margin-left: 20px; /* Space between dot and content */
+    z-index: 0; /* Behind the dot */
+  }
+
+  .experience {
+    margin-top: 2em; /* Add spacing for experience */
+  }
+
+  /* Optional: Add additional styling for headings */
+  h3 {
+    margin: 0.5em 0;
+  }
+  .launch {
+    transform: translateY(-50px);
+    transition: transform 1s ease;
   }
 }

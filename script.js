@@ -5,19 +5,13 @@ const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter() {
-  // Get current scroll position
   let scrollY = window.pageYOffset;
 
-  // Now we loop through sections to get height, top and ID values for each
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
     sectionId = current.getAttribute("id");
 
-    /*
-    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
-    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
-    */
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
         .querySelector(".navBG a[href*=" + sectionId + "]")
@@ -51,6 +45,32 @@ darkToggle.addEventListener("click", function () {
   document.body.classList.toggle("dark");
 });
 
+// Functionality for the rocket emoji
+$(document).ready(function () {
+  const emojis = ["🚀", "✨", "🌟", "🌈", "🎉", "🛸"]; // Array of emojis
+  const rocket = $("#rocket");
+
+  // Function to handle rocket click
+  rocket.on("click", function () {
+    // Fade out the current emoji
+    $(this).addClass("fade-out");
+
+    // Randomize emoji after fade out completes
+    setTimeout(() => {
+      const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+      $(this).text(randomEmoji); // Change the emoji
+
+      // Fade in the new emoji
+      $(this).removeClass("fade-out").addClass("fade-in");
+
+      // Remove fade-in class after animation ends
+      setTimeout(() => {
+        $(this).removeClass("fade-in");
+      }, 500); // Duration should match your CSS animation duration
+    }, 500); // Delay to allow the fade-out animation to complete
+  });
+});
+
 $("#submit-form").submit((e) => {
   e.preventDefault();
   $.ajax({
@@ -60,7 +80,6 @@ $("#submit-form").submit((e) => {
     success: function (response) {
       alert("Message Sent");
       window.location.reload();
-      //window.location.href="https://google.com"
     },
     error: function (err) {
       alert("Something Error");
