@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flutter Developer Portfolio</title>
+<link id="favicon" rel="icon" type="image/x-icon" href="favicon_light_mode/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -806,11 +807,13 @@
 <script>
 const toggle = document.getElementById('themeToggle');
 const html = document.documentElement;
+const favicon = document.getElementById('favicon');
 
 toggle.addEventListener('click', () => {
   const dark = html.getAttribute('data-theme') === 'dark';
   html.setAttribute('data-theme', dark ? 'light' : 'dark');
   toggle.textContent = dark ? '🌙' : '☀';
+  favicon.href = dark ? 'favicon_light_mode/favicon.ico' : 'favicon_dark_mode/favicon.ico';
 });
 
 const obs = new IntersectionObserver((entries) => {
