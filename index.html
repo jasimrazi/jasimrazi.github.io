@@ -140,9 +140,51 @@
     position: relative; z-index: 1;
   }
   .hero-inner {
-    max-width: 1100px; margin: 0 auto;
+    max-width: 1200px; margin: 0 auto;
     width: 100%; padding-top: 5rem;
+    display: flex; gap: 6rem; align-items: center; justify-content: space-between;
   }
+  .hero-content { flex: 1; max-width: 600px; }
+  .hero-code {
+    flex: 1; min-width: 400px; max-width: 500px;
+    background: #111118; border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative; z-index: 2;
+  }
+  [data-theme="light"] .hero-code {
+    background: #fbfbf8;
+    border-color: rgba(0,0,0,0.06);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  }
+  [data-theme="light"] .hero-code-header {
+    background: #f4f3ee;
+    border-bottom-color: rgba(0,0,0,0.06);
+  }
+  [data-theme="light"] .hero-code-body { color: #24292f; }
+  [data-theme="light"] .c-kw { color: #cf222e; }
+  [data-theme="light"] .c-cl { color: #0550ae; }
+  [data-theme="light"] .c-fn { color: #8250df; }
+  [data-theme="light"] .c-st { color: #0a3069; }
+  [data-theme="light"] .c-cm { color: #6e7781; }
+  .hero-code-header {
+    background: #1a1a26; padding: 12px 1rem;
+    display: flex; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .hc-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .hc-dot.red { background: #ff5f56; }
+  .hc-dot.yel { background: #ffbd2e; }
+  .hc-dot.grn { background: #27c93f; }
+  .hero-code-body {
+    padding: 1.5rem; font-family: 'DM Mono', monospace;
+    font-size: 0.85rem; line-height: 1.6; color: #f0eeff;
+    overflow-x: auto; white-space: pre;
+  }
+  .c-kw { color: #ff7b72; }
+  .c-cl { color: #d2a8ff; }
+  .c-fn { color: #79c0ff; }
+  .c-st { color: #a5d6ff; }
+  .c-cm { color: #8b949e; }
 
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
@@ -478,6 +520,9 @@
     .nav-links { display: none; }
     section { padding: 5rem 1.5rem; }
     .hero { padding: 0 1.5rem; }
+    .hero-inner { flex-direction: column; gap: 3rem; }
+    .hero-content { max-width: 100%; }
+    .hero-code { width: 100%; min-width: unset; }
     .hero h1 { font-size: clamp(2.8rem, 10vw, 4rem); }
     .hero-stats { gap: 2rem; }
     .about-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -510,33 +555,58 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge animate d1">Available for opportunities</div>
-    <h1 class="animate d2">Flutter <em>Developer</em><br>&amp; Problem Solver</h1>
-    <p class="hero-tagline animate d3">
-      I build <strong>scalable mobile apps</strong> with Flutter —
-      clean architecture, real-world APIs, and interfaces people actually enjoy using.
-    </p>
-    <div class="hero-ctas animate d4">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-secondary">Contact Me</a>
-      <a href="#" class="btn btn-secondary">↓ Resume</a>
+    <div class="hero-content">
+      <div class="hero-badge animate d1">Available for opportunities</div>
+      <h1 class="animate d2">Flutter <em>Developer</em><br>&amp; Problem Solver</h1>
+      <p class="hero-tagline animate d3">
+        I build <strong>scalable mobile apps</strong> with Flutter —
+        clean architecture, real-world APIs, and interfaces people actually enjoy using.
+      </p>
+      <div class="hero-ctas animate d4">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        <a href="#" class="btn btn-secondary">↓ Resume</a>
+      </div>
+      <div class="hero-stats animate d5">
+        <div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">production apps</div>
+        </div>
+        <div>
+          <div class="stat-num">301</div>
+          <div class="stat-label">commits (10 wks)</div>
+        </div>
+        <div>
+          <div class="stat-num">195+</div>
+          <div class="stat-label">features shipped</div>
+        </div>
+        <div>
+          <div class="stat-num">28</div>
+          <div class="stat-label">bugs resolved</div>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats animate d5">
-      <div>
-        <div class="stat-num">2</div>
-        <div class="stat-label">production apps</div>
+
+    <div class="hero-code animate d5">
+      <div class="hero-code-header">
+        <div class="hc-dot red"></div>
+        <div class="hc-dot yel"></div>
+        <div class="hc-dot grn"></div>
       </div>
-      <div>
-        <div class="stat-num">301</div>
-        <div class="stat-label">commits (10 wks)</div>
-      </div>
-      <div>
-        <div class="stat-num">195+</div>
-        <div class="stat-label">features shipped</div>
-      </div>
-      <div>
-        <div class="stat-num">28</div>
-        <div class="stat-label">bugs resolved</div>
+      <div class="hero-code-body">
+<span class="c-cm">// Core setup</span>
+<span class="c-kw">class</span> <span class="c-cl">FlutterDeveloper</span> <span class="c-kw">extends</span> <span class="c-cl">ProblemSolver</span> {
+  <span class="c-cl">String</span> name = <span class="c-st">"Jasim Razi"</span>;
+  <span class="c-cl">List</span>&lt;<span class="c-cl">String</span>&gt; stack = [
+    <span class="c-st">"Flutter"</span>, <span class="c-st">"Dart"</span>, <span class="c-st">"Clean Arch"</span>
+  ];
+
+  <span class="c-kw">void</span> <span class="c-fn">buildApp</span>() {
+    <span class="c-kw">if</span> (requirements.areComplex) {
+      <span class="c-fn">deliverPerformantSolution</span>();
+    }
+  }
+}
       </div>
     </div>
   </div>
@@ -714,7 +784,7 @@
       <div class="exp-item">
         <div class="exp-role">Flutter Fullstack Developer — Maitexa Technologies Pvt Ltd</div>
         <div class="exp-meta">06/2024 - 11/2024 · Internship</div>
-        <div class="exp-desc">Developed full-stack mobile applications using Flutter for the frontend and Django for the backend, creating smooth data integration and real-time communication via RESTful APIs. Implemented user authentication, authorization, and state management using Provider in Flutter, ensuring secure and efficient app functionality. Collaborated with cross-functional teams to design responsive UIs and integrate SQLite databases, optimizing performance and user experience across different devices.</div>
+        <div class="exp-desc">Built full-stack mobile apps using Flutter and Django, optimizing performance and UX through secure RESTful APIs, Provider state management, and responsive SQLite-backed designs.</div>
         <div class="exp-tags">
           <span class="exp-tag">Flutter</span><span class="exp-tag">Provider</span><span class="exp-tag">REST APIs</span><span class="exp-tag">SQLite</span>
         </div>
