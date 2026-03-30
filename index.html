@@ -506,6 +506,20 @@
   }
   footer span { color: var(--accent); transition: color 0.35s; }
 
+  /* BACK TO TOP */
+  .back-to-top {
+    position: fixed; bottom: 2rem; right: 2rem;
+    width: 40px; height: 40px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: var(--accent); font-size: 1rem; cursor: pointer;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s, background 0.35s, border-color 0.35s;
+    z-index: 999; text-decoration: none;
+  }
+  .back-to-top.visible { opacity: 1; pointer-events: all; }
+  .back-to-top:hover { background: var(--bg2); transform: translateY(-3px); }
+
   /* ANIMATIONS */
   @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
   .animate { animation: fadeUp 0.6s ease forwards; }
@@ -872,6 +886,8 @@
   </div>
 </section>
 
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
 <footer>Built with intention · <span>Flutter Developer Portfolio</span> · 2025</footer>
 
 <script>
@@ -921,6 +937,15 @@ document.querySelectorAll('.project-card,.skill-category,.diff-card,.exp-item,.v
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   obs.observe(el);
+});
+
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+});
+backToTop.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 </script>
 </body>
