@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flutter Developer Portfolio</title>
-<link id="favicon" rel="icon" type="image/x-icon" href="favicon_light_mode/favicon.ico">
+<title>Jasim Razi · Flutter Developer</title>
+<link id="favicon" rel="icon" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   [data-theme="dark"] {
-    --bg:      #0a0a0f;
-    --bg2:     #111118;
-    --bg3:     #1a1a26;
+    --bg:      #151520;
+    --bg2:     #1c1c2a;
+    --bg3:     #242436;
     --text:    #f0eeff;
     --muted:   #7a7a9d;
     --border:  rgba(255,255,255,0.07);
     --card:    rgba(255,255,255,0.03);
-    --nav-bg:  rgba(10,10,15,0.88);
-    --accent:  #54f4b4;
+    --nav-bg:  rgba(21,21,32,0.88);
+    --accent:  #54C5F8;
     --accent2: #7b6cff;
     --btn-pt:  #0a0a0f;
-    --grid:    rgba(84,244,180,0.03);
+    --grid:    rgba(84,197,248,0.03);
     --orb-op:  0.11;
     --tog-bg:  rgba(255,255,255,0.06);
     --tog-ico: "☀";
@@ -28,17 +28,17 @@
 
   [data-theme="light"] {
     --bg:      #f4f3ee;
-    --bg2:     #eae9e0;
-    --bg3:     #dddcd3;
+    --bg2:     rgba(244,243,238,0.92);
+    --bg3:     #e8e7df;
     --text:    #16161a;
     --muted:   #666676;
     --border:  rgba(0,0,0,0.08);
     --card:    rgba(0,0,0,0.03);
     --nav-bg:  rgba(244,243,238,0.92);
-    --accent:  #0d9e6a;
+    --accent:  #2FA4D7;
     --accent2: #5044cc;
     --btn-pt:  #ffffff;
-    --grid:    rgba(13,158,106,0.05);
+    --grid:    rgba(47,164,215,0.05);
     --orb-op:  0.15;
     --tog-bg:  rgba(0,0,0,0.07);
   }
@@ -153,12 +153,12 @@
     position: relative; z-index: 2;
   }
   [data-theme="light"] .hero-code {
-    background: #fbfbf8;
-    border-color: rgba(0,0,0,0.06);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    background: #f4f3ee;
+    border-color: rgba(0,0,0,0.07);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
   }
   [data-theme="light"] .hero-code-header {
-    background: #f4f3ee;
+    background: #eae9e0;
     border-bottom-color: rgba(0,0,0,0.06);
   }
   [data-theme="light"] .hero-code-body { color: #24292f; }
@@ -188,8 +188,8 @@
 
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(84,244,180,0.08);
-    border: 1px solid rgba(84,244,180,0.2);
+    background: rgba(84,197,248,0.08);
+    border: 1px solid rgba(84,197,248,0.2);
     color: var(--accent);
     font-family: 'DM Mono', monospace;
     font-size: 0.74rem;
@@ -200,8 +200,8 @@
     transition: color 0.35s;
   }
   [data-theme="light"] .hero-badge {
-    background: rgba(13,158,106,0.08);
-    border-color: rgba(13,158,106,0.2);
+    background: rgba(47,164,215,0.10);
+    border-color: rgba(47,164,215,0.25);
   }
   .hero-badge::before {
     content: '';
@@ -879,12 +879,33 @@ const toggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 const favicon = document.getElementById('favicon');
 
+function generateFavicon(isDark) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 64; canvas.height = 64;
+  const ctx = canvas.getContext('2d');
+
+  // Text only, transparent background
+  ctx.fillStyle = isDark ? '#54C5F8' : '#2FA4D7';
+  ctx.font = 'italic 40px "Instrument Serif", serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('Ja', 32, 34);
+
+  favicon.href = canvas.toDataURL('image/png');
+}
+
+// Wait for font to load then generate
+document.fonts.ready.then(() => {
+  generateFavicon(html.getAttribute('data-theme') === 'dark');
+});
+
 toggle.addEventListener('click', () => {
   const dark = html.getAttribute('data-theme') === 'dark';
   html.setAttribute('data-theme', dark ? 'light' : 'dark');
   toggle.textContent = dark ? '🌙' : '☀';
-  favicon.href = dark ? 'favicon_light_mode/favicon.ico' : 'favicon_dark_mode/favicon.ico';
+  generateFavicon(!dark);
 });
+
 
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
