@@ -530,6 +530,8 @@
   .d5 { animation-delay: 0.68s; opacity: 0; }
 
   @media (max-width: 900px) {
+    .orb { opacity: calc(var(--orb-op) * 0.5); }
+    [data-theme="light"] .orb { display: none; }
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     section { padding: 5rem 1.5rem; }
