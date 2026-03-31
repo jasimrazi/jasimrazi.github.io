@@ -2,7 +2,8 @@
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FDF6EB" id="theme-color-meta">
 <title>Jasim Razi · Flutter Developer</title>
 <link id="favicon" rel="icon" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -860,10 +861,13 @@ document.fonts.ready.then(() => {
   generateFavicon(html.getAttribute('data-theme') === 'dark');
 });
 
+const themeMeta = document.getElementById('theme-color-meta');
+
 toggle.addEventListener('click', () => {
   const dark = html.getAttribute('data-theme') === 'dark';
   html.setAttribute('data-theme', dark ? 'light' : 'dark');
   toggle.textContent = dark ? '🌙' : '☀';
+  if(themeMeta) themeMeta.content = dark ? '#FDF6EB' : '#0b0b11';
   generateFavicon(!dark);
 });
 
