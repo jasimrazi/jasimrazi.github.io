@@ -820,12 +820,13 @@
         <p>I'm open to Flutter developer roles, freelance projects, and interesting collaborations. If you've got something to build, I'd love to hear about it.</p>
         <a href="mailto:jasimrazi17@gmail.com" class="contact-email">jasimrazi17@gmail.com</a>
       </div>
-      <div class="contact-form">
-        <div class="form-group"><input type="text" placeholder="Your name" /></div>
-        <div class="form-group"><input type="email" placeholder="Your email" /></div>
-        <div class="form-group"><textarea placeholder="Tell me about your project..."></textarea></div>
-        <button class="btn btn-primary" style="align-self: flex-start; border: none;">Send message →</button>
-      </div>
+      <form action="https://formsubmit.co/jasimrazi17@gmail.com" method="POST" class="contact-form">
+        <input type="hidden" name="_subject" value="New message from portfolio!">
+        <div class="form-group"><input type="text" name="name" placeholder="Your name" required /></div>
+        <div class="form-group"><input type="email" name="email" placeholder="Your email" required /></div>
+        <div class="form-group"><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
+        <button type="submit" class="btn btn-primary" style="align-self: flex-start; border: none;">Send message →</button>
+      </form>
     </div>
   </div>
 </section>
